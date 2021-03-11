@@ -4,10 +4,11 @@ def start_scrapping():
     # Create class
     mysearch = InternationalOrganizationsScrapper()
 
-    # Add OCSE jobs:
-    mysearch.OCSE()
+    # Add OSCE jobs:
+    mysearch.OSCE()
 
-    print(mysearch.job_list)
+    # Add UN jobs:
+    mysearch.UN_jobs()
 
     # Save file:
     mysearch.save_file(path="C:/Users/brian/OneDrive/Escritorio/")
