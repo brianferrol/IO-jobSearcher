@@ -13,7 +13,7 @@ class InternationalOrganizationsScrapper:
 
     @staticmethod
     def _make_hyperlink(value):
-        """utilitie for converting value to hyperlink"""
+        """utility for converting value to hyperlink"""
         return '=HYPERLINK("%s", "%s")' % (value, value)
 
     def save_file(self, path):
@@ -47,7 +47,7 @@ class InternationalOrganizationsScrapper:
 
     def UN_jobs(self):
         """
-        This website present a particular difficultie: as there is too many jobs, they are splitted in different
+        This website presents a particular difficulty: as there is too many jobs, they are split in different
         pages.
         """
 
