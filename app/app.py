@@ -11,4 +11,4 @@ def start_scrapping():
     mysearch.UN_jobs()
 
     # Save file:
-    mysearch.save_file(path="C:/Users/brian/OneDrive/Escritorio/")
+    mysearch.save_file(path="./files/")

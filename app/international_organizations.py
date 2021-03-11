@@ -11,11 +11,23 @@ class InternationalOrganizationsScrapper:
     def __init__(self):
         self.job_list = pd.DataFrame()
 
+    @staticmethod
+    def _make_hyperlink(value):
+        """utilitie for converting value to hyperlink"""
+        return '=HYPERLINK("%s", "%s")' % (value, value)
+
     def save_file(self, path):
 
         today = date.today().strftime("%d-%m-%Y")
         filename = "jobList_{}.xlsx".format(today)
 
+        # convert column job_url value to hyperlink:
+        self.job_list["job_url"] = self.job_list["job_url"].apply(lambda x: self._make_hyperlink(x))
+
+        # order DataFrame columns (TOC):
+        self.job_list = self.job_list[["title", "job_url"]]
+
+        # save DataFrame to excel.
         self.job_list.to_excel(path + filename, encoding="utf-8", index=False)
         return print("job list saved on {}".format(path + filename))
 
